@@ -20,8 +20,12 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
     <link rel="manifest" href="/assets/images/site.webmanifest">
 
+
+        <script src="/src/assets/js/prism.js" ></script>
+ 
   <script type="module" crossorigin src="/assets/main-gpkXrv_Y.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-DoRgB72i.css">
+  <link rel="stylesheet" crossorigin href="/assets/main-QvKF-Smj.css">
+  <link rel="stylesheet" crossorigin href="/assets/prism-DfnqjRNF.css">
 </head>
 
 <body>
@@ -82,6 +86,14 @@
                     </a>
                   </li>
     
+                  <li class="group relative">
+                    <a
+                      href="/examples"
+                      class="ud-menu-scroll mx-8 flex py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-black lg:group-hover:text-primary "
+                    >
+                      Examples
+                    </a>
+                  </li>
                   <li class="group relative">
                     <a
                       href="/docs"
@@ -223,20 +235,20 @@
           <div class="w-full md:w-1/2 lg:w-2/3">
     
             <section id="quickstart" class="mb-12 px-4">
-              <h3 class="text-xl font-bold">Quickstart</h3>
-              <p class="pb-2">
+              <h3 class="text-2xl font-bold mb-10">Quickstart</h3>
+              <p class="pb-12">
                 uniquemailer is built with Laravel framework. The current release is based
                 on Laravel v10. All server requirements are the same as with Laravel.
               </p>
-              <blockquote class="px-2 bg-gray-2 pb-4 text-wrap">
+              <pre><code class="language-bash">
                 <ul class="list-none">
-                  <li>PHP 8.1 or higher</li>
-                  <li>Laravel 9 or higher</li>
+                  <li>PHP 8.3 or higher</li>
+                  <li>Laravel 11 or higher</li>
                   <li>Redis</li>
                   <li>MySQL 5.7 or higher</li>
                 </ul>
-              </blockquote>
-              <p class="pb-2">
+              </code></pre>
+              <p class="pt-12">
                 We highly recomend you to use Redis for cache and queue support.
               </p>
             </section>
@@ -244,43 +256,38 @@
     
     
             <section id="installation" class="mb-12  px-4">
-              <h3 class="text-xl font-bold">Installation</h3>
-              <p class="pb-2">Clone or download the repository to your server:</p>
+              <h3 class="text-2xl font-bold mb-10">Installation</h3>
+              <p class="pb-12">Clone or download the repository to your server:</p>
     
-              <blockquote class="px-2 bg-gray-2  pb-4 text-wrap">
-                git clone https://github.com/uniquemailer/application.git
-              </blockquote>
+              <pre><code class="language-bash">git clone https://github.com/uniquemailer/application.git</code></pre>
     
-              <p class="pb-2">or download latest release from:
+              <p class="py-12">or download latest release from:
     
                 <a href="https://github.com/uniquemailer/application/releases">Github releases</a>
               </p>
-              <p class="pb-2">Run composer to install dependecies</p>
+              <p class="pb-12">Run composer to install dependecies</p>
     
               <blockquote class="px-2  pb-4 bg-gray-2 text-wrap"> composer install </blockquote>
     
-              <p class="pb-2">Update application permissions</p>
+              <p class="py-12">Update application permissions</p>
     
-              <blockquote class="px-2 bg-gray-2 text-wrap">
-                chmod -R 755 storage sudo chown -R www-data:www-data storage
-                bootstrap public/logo
-              </blockquote>
-              <p class="pb-2">
+              <pre><code class="language-bash">chmod -R 755 storage</code></pre>
+    
+              <pre><code class="language-bash">chown -R www-data:www-data storage</code></pre>
+              <p class="py-12">
                 Create a database in your mysql or mariadb and migration tool and
                 populate the database with sample data
               </p>
     
-              <blockquote class="px-2 bg-gray-2 text-wrap"> php artisan migrate:refresh --seed </blockquote>
+              <pre><code class="language-bash">php artisan migrate:refresh --seed </code> </pre>
     
-              <p class="pb-2">
+    
+              <p class="py-12">
                 Now your application is ready to run. Browse to your website and login
                 with following credentials:
               </p>
-              <blockquote class="px-2 bg-gray-2 text-wrap">
-                username: test@example.com
-    
-                password: password
-              </blockquote>
+              <pre><code class="language-text">username: test@example.com </code> </pre>
+              <pre><code class="language-text">password: password</code></pre>
             </section>
     
     
@@ -290,21 +297,21 @@
     
     
             <section id="configuration" class="mb-12  px-4">
-              <h3 class="text-xl font-bold">Configuration</h3>
+              <h3 class="text-2xl font-bold mb-10">Configuration</h3>
     
-              <p class="pb-2">
+              <p class="py-12">
                 You need to update the environment variables in
                 <code>.env</code> file. You will find this file at the root of the application.
               </p>
     
-              <p class="pb-2">
+              <p class="py-12">
                 All of the configuration files for the Laravel framework are stored in the config directory. You may get
                 more details by visiting
                 the URL below:
     
                 <a href="https://laravel.com/docs/11.x/configuration">Laravel configuration page</a>
               </p>
-              <p class="pb-2">
+              <p class="py-12">
                 The current version is only supporting SMTP option. The new mail driver are on the way. You may setup the
                 mail
                 driver using
@@ -316,29 +323,68 @@
     
     
             <section id="queues" class="mb-12  px-4">
-              <h3 class="text-xl font-bold">Running Queues</h3>
-              <p class="pb-2">uniquemailer supports Queues by default. If you follow Laravel's Queue instruction, it will give a great
+              <h3 class="text-2xl font-bold mb-10">Running Queues</h3>
+              <p class="py-12">uniquemailer supports Queues by default. If you follow Laravel's Queue instruction, it will
+                give a great
                 performance under heavy traffic</p>
     
-              <span class="font-semibold">Default queue</span>
+              <div class="font-semibold py-10">Default queue</div>
     
-              <pre class="text-wrap">php artisan queue:work --queue=emails --tries=3</pre>
+              <pre><code class="language-bash">php artisan queue:work --queue=emails --tries=3</code></pre>
     
-              <span class="font-semibold">Try failed job</span>
+              <div class="font-semibold py-10">Try failed job</div>
     
-              <pre class="text-wrap">php artisan queue:failed --queue=emails</pre>
+              <pre><code class="language-bash">php artisan queue:failed --queue=emails</code></pre>
     
-              <span class="font-semibold">Prune failed jobs after 48 hours</span>
-              <span class="font-semibold">Try failed job</span>
-    
-              <pre class="text-wrap">php artisan queue:prune-failed --hours=48
-    </pre>
+              <div class="font-semibold py-10">Prune failed jobs after 48 hours</div>
+              
+              <pre><code class="language-bash">php artisan queue:prune-failed --hours=48</code></pre>
     
             </section>
     
             <section class="mb-12  px-4" id="templates">
-              <h3 class="text-xl font-bold">Creating Templates</h3>
-              <p class="pb-2">
+              <h3 class="text-2xl font-bold mb-10">Building Email Templates</h3>
+    
+    
+    
+              <p class="pb-12">Templates are key to creating reusable and personalized emails. Here's a step-by-step guide:
+              </p>
+    
+              <span class="font-semibold pb-10">Design Your Template:</span>
+    
+              <p class="pb-12">Use mustache syntax to define placeholders for your variables. These placeholders will be
+                replaced with actual values when the email is sent.</p>
+    
+    
+              <span class="font-semibold">Define Variables (Placeholders):</span>
+    
+              <p class="pb-12">In a dedicated area (like a text box), list your variables separated by commas. These will be
+                used to populate the email content.</p>
+    
+    
+              <span class="font-semibold">Write Your Email Content:</span>
+    
+              <p class="pb-12">Use an online editor to craft the HTML code for your email. This editor provides a familiar
+                experience to what you'd have on your computer.</p>
+    
+    
+              <span class="font-semibold">Benefits:</span>
+              <p class="py-12">
+                Reusable Templates: Save time by creating templates you can use for multiple emails.<br>
+                Personalized Content: Personalize emails by inserting dynamic values into the template.<br>
+                Easy Editing: The online editor simplifies creating and editing your email's HTML code.
+              </p>
+    
+    
+              <span class="font-semibold">Improvements:</span>
+              <p class="pb-12">
+                Clearer structure and breakdown of steps.
+                Replaced jargon with simpler terms ("placeholders" instead of "mustache template syntax").
+                Explained the benefits of using templates.
+                Added a bulleted list summarizing the advantages.</p>
+    
+    
+              <p class="pb-12">
                 Templates are playing a major role.
                 You need to design your template carefully.
                 You need to place your variables as mustache template syntax.
@@ -346,19 +392,19 @@
                 After creating template details, you may start to update the HTML codes using onli editor.
               </p>
               <span class="font-semibold">Now first, you need to create template details with placeholders</span>
-              <p class="pb-2">
+              <p class="pb-12">
                 You will put these variables into placeholders' textarea separating with comma. The system will replace
                 your values before sending the email.
               </p>
     
-              <p class="pb-2">
+              <p class="pb-12">
                 After creating a template, you may start to update the HTML codes of the email. Online editor gives you
                 the same working at your computer.
               </p>
             </section>
             <section class="mb-12  px-4" id="placeholders">
-              <h3 class="text-xl font-bold">Sensitive Placeholders</h3>
-              <p class="pb-2">
+              <h3 class="text-2xl font-bold mb-10">Sensitive Placeholders</h3>
+              <p class="py-12">
                 Placeholders are the variables in your email templates. You need to set the variable names
                 while creating your templates. By default, all placeholders are saving to audit log table to
                 review or resend. If you're sending a sensitive information and not wanting to save to the database,
@@ -367,8 +413,8 @@
     
             </section>
             <section class="mb-12  px-4" id="email_templates">
-              <h3 class="text-xl font-bold">Email Template and Variables</h3>
-              <p class="pb-2">
+              <h3 class="text-2xl font-bold mb-10">Email Template and Variables</h3>
+              <p class="py-12">
                 The application allows you to create and update email templates online. First, you need to create a template
                 record before updating HTML.
                 After adding the placeholders into template mode, you may start to update the template. The template page
@@ -379,22 +425,22 @@
     
     
             <section class="mb-12  px-4" id="services">
-              <h3 class="text-xl font-bold">Setting up Services</h3>
-              <p class="pb-2">
+              <h3 class="text-2xl font-bold mb-10">Setting up Services</h3>
+              <p class="py-12">
                 Create a service and choose a template. Each template has its own placeholders. When you choose a
                 template,
                 your service will fill the placeholders with variables in Service API. You can add receipts for each
                 service.
               </p>
     
-              <p class="pb-2">
+              <p class="py-12">
                 The above image is a very good example of usage. It's using a special template. The system will choose the
                 right template designed for this service and update the variables using a template placeholder.
               </p>
             </section>
             <section class="mb-12  px-4" id="sending">
-              <h3 class="text-xl font-bold">Sending Emails Manually</h3>
-              <p class="pb-2">
+              <h3 class="text-2xl font-bold mb-10">Sending Emails Manually</h3>
+              <p class="py-12">
                 Designed to work with APIs and also allows you to resend the emails. But if you wish to
                 test the templates or new products, you may use manual email sending system. All you need is to
                 choose a template or product and click on the Send Email button. The system will prepar you a wizard form
@@ -404,8 +450,8 @@
             </section>
     
             <section class="mb-12  px-4" id="token">
-              <h3 class="text-xl font-bold">Generating API Token</h3>
-              <p class="pb-2">
+              <h3 class="text-2xl font-bold mb-10">Generating API Token</h3>
+              <p class="py-12">
                 Communication with your application and system is based on API. We're using API Token to protect the
                 software. You need to generate your
                 API Key from the Settings page. Don't forget to copy the key after you generated it.
@@ -413,59 +459,61 @@
     
             </section>
             <section class="mb-12  px-4" id="api">
-              <h3 class="text-xl font-bold">API Endpoints</h3>
+              <h3 class="text-2xl font-bold mb-10">API Endpoints</h3>
     
-              <p class="pb-2">
+              <p class="py-12">
                 The software has two API endpoints. You may choose a product to send the email or you may choose a template.
                 If
                 you will send a
                 notification or announcement, choosing a template will be a better choice.
               </p>
-              <pre class="text-wrap p-2">/api/services/{SERVICE_SLUG}/send</pre>
-              <p class="pb-2">Listing all registed services</p>
-              <pre class="text-wrap p-2"><p class="pb-2">/api/services</p></pre>
+              <pre><code class="language-bash">/api/services/{SERVICE_SLUG}/send</code></pre>
+              <p class="py-12">Listing all registed services</p>
+              <pre><code class="language-bash"><p class="pb-2">/api/services</p></code></pre>
     
-              <p class="pb-2">Single service with template placeholders</p>
-              <pre class="text-wrap p-2">/api/services/{SERVICE_SLUG}/show</pre>
+              <p class="py-12">Single service with template placeholders</p>
+              <pre><code class="language-bash">/api/services/{SERVICE_SLUG}/show</code></pre>
     
-              <p class="pb-2">Get all templates:</p>
-              <pre class="text-wrap p-2">/api/templates</pre>
+              <p class="py-12">Get all templates:</p>
+              <pre><code class="language-bash">/api/templates</code></pre>
     
     
-              <p class="pb-2">All sent emails</p>
-              <pre class="text-wrap p-2">/api/audit/emails</pre>
+              <p class="py-12">All sent emails</p>
+              <pre><code class="language-bash">/api/audit/emails</code></pre>
     
-              <p class="pb-2">
+              <p class="py-12">
                 Both API URL is token-based protected. You must send this token in the
                 Authorization header when making requests to protected resources:
               </p>
     
     
-              <pre class="text-wrap p-2">Authorization: Bearer {$token}</pre>
+              <pre><code class="language-bash">Authorization: Bearer {$token}</code></pre>
             </section>
     
             <section class="mb-12  px-4" id="working">
-              <h3 class="text-xl font-bold">Working with API</h3>
-              <p class="pb-2">Each template or product page also shows you a presentation of the JSON body with an example.
+              <h3 class="text-2xl font-bold mb-10">Working with API</h3>
+              <p class="py-12">Each template or product page also shows you a presentation of the JSON body with an example.
                 While creating API clients, will give you a start point.
     
               </p>
     
-              <code class="text-wrap">{
+              <pre><code class="language-json">{
               "customer_name": "John Doe",
               "order_numver": "ABC101010101",
-              "serial_key": "5555-5555-5555-5555"}</code>
+              "serial_key": "5555-5555-5555-5555"
+              }</code></pre>
     
     
-              <p class="pb-2">
+              <p class="py-12">
                 As you see that, both API must have email and transaction_id entries in the first part of the JSON body.
                 If you choose a product, you should provide the SKU of the product. If you'll use a directly template,
                 you need to enter template ID.
               </p>
             </section>
             <section class="mb-12  px-4" id="auditing">
-              <h3 class="text-xl font-bold">Auditing Emails</h3>
-              <p class="pb-2">Copy of each mail stored in the database. You may filter the results by email or transaction Id.
+              <h3 class="text-2xl font-bold mb-10">Auditing Emails</h3>
+              <p class="py-12">Copy of each mail stored in the database. You may filter the results by email or transaction
+                Id.
                 You may use the order Ids as transaction Id, so you may easily find a copy of the email in the database.
               </p>
             </section>

@@ -15,5 +15,8 @@
     "prettier-plugin-tailwindcss": "^0.5.9",
     "vite-plugin-static-copy": "^1.0.1",
     "vituum": "^1"
+  },
+  "dependencies": {
+    "highlight.js": "^11.10.0"
   }
 }
